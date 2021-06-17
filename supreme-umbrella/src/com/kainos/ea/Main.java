@@ -3,17 +3,21 @@ package com.kainos.ea;
 import java.io.IOException;
 
 
-public class EntryFile {
+public class Main {
 
     public static void main(String[] args) {
-        UI terminal = new UI();
         try{
-            terminal.clearScreen();
-            String input = terminal.getInput();
-            terminal.clearScreen();
-            System.out.println(input);
-        }catch(IOException e){
+            UI terminal = new UI();
+            terminal.createLoginScreen();
+//            terminal.clearScreen();
+//            String input = terminal.getInput();
+//            terminal.clearScreen();
+//            System.out.println(input);
+//            input = terminal.getInput();
+        }catch(IOException IOe){
             System.out.println("Cannot get the line");
+        }catch(InterruptedException Ie){
+
         }
     }
 }
