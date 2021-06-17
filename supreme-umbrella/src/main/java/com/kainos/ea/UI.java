@@ -1,7 +1,7 @@
 package com.kainos.ea;
 
-import com.kainos.ea.employee_stuff.Employee;
-import com.kainos.ea.employee_stuff.SalesEmployee;
+import com.kainos.ea.Employee;
+import com.kainos.ea.SalesEmployee;
 
 import java.io.BufferedReader;
 import java.io.IOException;

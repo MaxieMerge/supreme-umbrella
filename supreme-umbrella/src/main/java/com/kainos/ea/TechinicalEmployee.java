@@ -1,4 +1,4 @@
-package com.kainos.ea.employee_stuff;
+package com.kainos.ea;
 
 public class TechinicalEmployee extends Employee{
 

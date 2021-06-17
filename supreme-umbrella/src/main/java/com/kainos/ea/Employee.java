@@ -1,4 +1,4 @@
-package com.kainos.ea.employee_stuff;
+package com.kainos.ea;
 
 public class Employee {
     private short employeeID, projectID;
@@ -9,7 +9,6 @@ public class Employee {
     public Employee(){
 
     }
-
 
     public Employee(short employeeID, String newFName, String newLName,
                     String newCity, String newPostcode, String newStreetAddr,
