@@ -36,11 +36,12 @@ public class Main {
             terminal.authUser();
             String choice = terminal.createMenuScreen();
             if(choice.equals("1"))
-                terminal.addEmployeeScreen();
-            else if(choice.equals("2"))
-                terminal.addSalesEmployeeScreen();
-            else if(choice.equals("3"))
-                terminal.generateReport();
+               terminal.addEmployeeScreen(db);
+//            else if(choice.equals("2"))
+////                terminal.addSalesEmployeeScreen();
+//            else if(choice.equals("3"))
+//                terminal.generateReport();
+
 
         }catch(IOException IOe){
             System.out.println("Cannot get the line");
