@@ -6,6 +6,10 @@ public class Employee {
     private int salary;
     private final double TAXRATE = 0.25;
 
+    public Employee(){
+
+    }
+
 
     public Employee(short employeeID, String newFName, String newLName,
                     String newCity, String newPostcode, String newStreetAddr,
@@ -123,4 +127,5 @@ public class Employee {
     public void setSalary(int salary) {
         if(salary>0) this.salary = salary;
     }
+
 }
