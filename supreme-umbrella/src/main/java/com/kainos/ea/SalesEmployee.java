@@ -4,6 +4,10 @@ public class SalesEmployee extends Employee {
     private int totalSales;
     private double commissionRate;
 
+    public SalesEmployee(){
+
+    }
+
     public SalesEmployee(short employeeID, String newFName, String newLName,
                          String newCity, String newPostcode, String newStreetAddr,
                          String newSortCode, String newBan, String newNIN, String newDepartment,
