@@ -5,13 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class UI {
-
-    public UI() {
-    }
-
     public final BufferedReader reader = new BufferedReader(
             new InputStreamReader(System.in));
-    ;
 
     public void clearScreen() {
         System.out.print("\033[H\033[2J");
