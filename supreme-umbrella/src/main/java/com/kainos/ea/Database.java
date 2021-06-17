@@ -2,8 +2,7 @@ package com.kainos.ea;
 
 import java.sql.*;
 
-public class Main {
-
+public class Database {
     private static Connection conn;
     private static Connection getConnection() {
         String user;
@@ -27,12 +26,28 @@ public class Main {
         return null;
     }
 
-    public static void main(String[] args) {
-
+    public ResultSet selectSQL(String SQL){
+        ResultSet rs = null;
         try {
             Connection c = getConnection();
             Statement st = c.createStatement();
-            // STATEMENT GOES HERE
+            rs = st.executeQuery(SQL);
+            c.close();
+        }
+        catch (SQLException e) {
+            e.printStackTrace(); // Bad practice alert!
+        }
+        
+        return rs;
+    }
+
+    public void insertSQL(String SQL){
+        try {
+            Connection c = getConnection();
+            Statement st = c.createStatement();
+            st.executeUpdate(SQL);
+            c.close();
+            System.out.println("Entry Inserted Successfully");
         }
         catch (SQLException e) {
             e.printStackTrace(); // Bad practice alert!
