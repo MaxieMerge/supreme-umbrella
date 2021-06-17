@@ -30,17 +30,28 @@ public class Main {
 
     public static void main(String[] args) {
         Database db = new Database();
-
         try{
             UI terminal = new UI();
             terminal.authUser();
             String choice = terminal.createMenuScreen();
-            if(choice.equals("1"))
-               terminal.addEmployeeScreen(db);
-//            else if(choice.equals("2"))
-////                terminal.addSalesEmployeeScreen();
-//            else if(choice.equals("3"))
-//                terminal.generateReport();
+            if(choice.equals("1")){
+                Employee newEmp = new Employee();
+                newEmp = terminal.addEmployeeScreen(db);
+                String SQL = String.format("INSERT INTO Employee (Fname, Lname, City, Postcode, StreetAddress, SortCode, BAN, Salary, NIN, Department) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', %d, '%s', '%s')", newEmp.getfName(), newEmp.getlName(), newEmp.getCity(), newEmp.getPostcode(), newEmp.getStreetAddr(), newEmp.getSortCode(), newEmp.getBan(), newEmp.getSalary(), newEmp.getNIN(), newEmp.getDepartment());
+                db.insertSQL(SQL);
+            }
+            else if(choice.equals("2")){
+                SalesEmployee newEmp = new SalesEmployee();
+                newEmp = terminal.addSalesEmployeeScreen(db);
+                String SQL = String.format("INSERT INTO Employee (Fname, Lname, City, Postcode, StreetAddress, SortCode, BAN, Salary, NIN, Department) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', %d, '%s', '%s')", newEmp.getfName(), newEmp.getlName(), newEmp.getCity(), newEmp.getPostcode(), newEmp.getStreetAddr(), newEmp.getSortCode(), newEmp.getBan(), newEmp.getSalary(), newEmp.getNIN(), newEmp.getDepartment());
+                db.insertSQL(SQL);
+                SQL = String.format("INSERT INTO SalesEmployee (EmployeeID, CommissionRate, TotalSales) values (LAST_INSERT_ID(), %d, %d)", newEmp.getCommissionRate(), newEmp.getTotalSales());
+                db.insertSQL(SQL);
+            }
+            else if(choice.equals("3")){
+                terminal.generateReport();
+
+            }
 
 
         }catch(IOException IOe){

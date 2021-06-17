@@ -55,7 +55,7 @@ public class UI {
             return choice;
     }
 
-    public void addEmployeeScreen(Database db) throws IOException{
+    public Employee addEmployeeScreen(Database db) throws IOException{
         Employee emp = new Employee();
 
         clearScreen();
@@ -99,12 +99,10 @@ public class UI {
         emp.setDepartment(this.getInput());
         clearScreen();
 
-        String SQL = String.format("INSERT INTO Employee (Fname, Lname, City, Postcode, StreetAddress, SortCode, BAN, Salary, NIN, Department) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', %d, '%s', '%s')", emp.getfName(), emp.getlName(), emp.getCity(), emp.getPostcode(), emp.getStreetAddr(), emp.getSortCode(), emp.getBan(), emp.getSalary(), emp.getNIN(), emp.getDepartment());
-        db.insertSQL(SQL);
-
+        return emp;
     }
 
-    public void addSalesEmployeeScreen(Database db) throws IOException{
+    public SalesEmployee addSalesEmployeeScreen(Database db) throws IOException{
         SalesEmployee emp = (SalesEmployee) addEmployeeScreen(db);
 
         System.out.print("Commision Rate: ");
@@ -115,6 +113,7 @@ public class UI {
         emp.setTotalSales(Integer.parseInt(this.getInput()));
         clearScreen();
 
+        return emp;
     }
 
     public void generateReport(){
