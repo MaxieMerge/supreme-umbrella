@@ -1,8 +1,19 @@
 package com.kainos.ea;
 
-public class Main {
+import java.io.IOException;
+
+
+public class EntryFile {
 
     public static void main(String[] args) {
-	// write your code here
+        UI terminal = new UI();
+        try{
+            terminal.clearScreen();
+            String input = terminal.getInput();
+            terminal.clearScreen();
+            System.out.println(input);
+        }catch(IOException e){
+            System.out.println("Cannot get the line");
+        }
     }
 }
