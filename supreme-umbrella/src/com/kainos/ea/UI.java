@@ -1,6 +1,7 @@
 package com.kainos.ea;
 
 import com.kainos.ea.employee_stuff.Employee;
+import com.kainos.ea.employee_stuff.SalesEmployee;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -102,8 +103,18 @@ public class UI {
 
     }
 
-    public void addSalesEmployeeScreen(){
+    public Employee addSalesEmployeeScreen() throws IOException{
+        SalesEmployee emp = (SalesEmployee) addEmployeeScreen();
 
+        System.out.print("Commision Rate: ");
+        emp.setCommissionRate(Double.parseDouble(this.getInput()));
+        clearScreen();
+
+        System.out.print("Total Sales: ");
+        emp.setTotalSales(Integer.parseInt(this.getInput()));
+        clearScreen();
+
+        return emp;
 
     }
 
