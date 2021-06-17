@@ -4,6 +4,7 @@ public class Employee {
     private short employeeID, projectID;
     private String fName, lName, city, postcode, streetAddr, sortCode, ban, NIN, department;
     private int salary;
+    private final double TAXRATE = 0.25;
 
 
     public Employee(short employeeID, String newFName, String newLName,
@@ -21,6 +22,10 @@ public class Employee {
         this.NIN = newNIN;
         this.department = newDepartment;
         this.salary = newSalary;
+    }
+
+    public int calcPay() { // calculate monthly pay in pence
+        return (int)(getSalary() - (getSalary() * TAXRATE)) / 12 ;
     }
 
     public short getEmployeeID() {

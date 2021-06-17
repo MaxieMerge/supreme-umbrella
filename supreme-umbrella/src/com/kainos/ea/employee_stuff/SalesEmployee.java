@@ -16,6 +16,15 @@ public class SalesEmployee extends Employee {
         setCommissionRate(newCommissionRate);
     }
 
+    @Override
+    public int calcPay() {
+        return (int) (super.calcPay() + calcCommission());
+    }
+
+    private int calcCommission(){
+        return (int)(commissionRate * totalSales);
+    }
+
 
     public int getTotalSales() {
         return totalSales;
