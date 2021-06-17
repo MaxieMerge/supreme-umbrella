@@ -1,6 +1,7 @@
 package com.kainos.ea;
 
 import java.sql.*;
+import com.kainos.ea.Database;
 
 public class Main {
 
@@ -15,7 +16,7 @@ public class Main {
         }
 
         try {
-            user = "Max"; password = "ThanksPatrick247"; host = "academy2020.cpc8rvmbbd9k.eu-west-2.rds.amazonaws.com";
+            user = "HR"; password = "HRisthebest"; host = "academy2020.cpc8rvmbbd9k.eu-west-2.rds.amazonaws.com";
 
             conn = DriverManager.getConnection("jdbc:mysql://"
                     + host + "/project2_Max?useSSL=false", user, password);
@@ -29,13 +30,5 @@ public class Main {
 
     public static void main(String[] args) {
 
-        try {
-            Connection c = getConnection();
-            Statement st = c.createStatement();
-            // STATEMENT GOES HERE
-        }
-        catch (SQLException e) {
-            e.printStackTrace(); // Bad practice alert!
-        }
     }
 }
