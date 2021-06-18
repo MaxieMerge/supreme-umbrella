@@ -14,7 +14,7 @@ public class Database {
         }
 
         try {
-            user = "Max"; password = "ThanksPatrick247"; host = "academy2020.cpc8rvmbbd9k.eu-west-2.rds.amazonaws.com";
+            user = "Max"; password = ""; host = "academy2020.cpc8rvmbbd9k.eu-west-2.rds.amazonaws.com";
 
             conn = DriverManager.getConnection("jdbc:mysql://"
                     + host + "/project2_Max?useSSL=false", user, password);

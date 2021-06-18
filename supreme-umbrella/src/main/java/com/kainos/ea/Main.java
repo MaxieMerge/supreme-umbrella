@@ -17,10 +17,10 @@ public class Main {
         }
 
         try {
-            user = "HR"; password = "HRisthebest"; host = "academy2020.cpc8rvmbbd9k.eu-west-2.rds.amazonaws.com";
+            user = "Max"; password = ""; host = "academy2020.cpc8rvmbbd9k.eu-west-2.rds.amazonaws.com";
 
             conn = DriverManager.getConnection("jdbc:mysql://"
-                    + host + "/project2_Max?useSSL=false", user, password);
+                    + host + "/project2_Max?allowPublicKeyRetrieval=true&useSSL=false", user, password);
             return conn;
 
         } catch (Exception e) {
